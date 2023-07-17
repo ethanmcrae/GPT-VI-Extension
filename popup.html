@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPT VI</title>
+  <style>
+    body {
+      width: 200px;
+      padding: 10px;
+      font-family: sans-serif; 
+    }
+    h1 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    button {
+      background: #1A89F4; 
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px; 
+      width: 100%;
+      transition: background-color 0.5s ease;
+    }
+    button[disabled] {
+      background: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+    .success {
+      background: #1af442; 
+    }
+  </style>
+</head>
+
+<body>
+  <h1>GPT VI</h1>
+  
+  <button id="connect-btn" disabled>Connect</button>
+
+  <script defer src="popup.js"></script>
+</body>
+</html>

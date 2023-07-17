@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "GPT VI",
+  "version": "1.0",
+  "description": "This extension enables a voice interface with ChatGPT.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png" 
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite", 
+    "tabs",
+    "storage",
+    "contextMenus"
+  ],
+  "action": {
+    "default_popup": "popup.html" ,
+    "default_icon": "icons/icon48.png"
+  },   
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["content.js"], 
+    "matches": ["https://chat.openai.com/*"]  
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'" 
+  }
+}
